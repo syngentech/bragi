@@ -8,10 +8,20 @@ module.exports = {
     docs:  './src/docs.js'
   },
   output: {
-    path: './dist',
+    path: './build',
     publicPath: '/',
     filename: './js/[name].js'
   },
+  externals: [
+    {
+      jquery: {
+        root: 'jQuery',
+        commonjs2: 'jquery',
+        commonjs: 'jquery',
+        amd: 'jquery'
+      }
+    }
+  ],
   module: {
     loaders: [
       {
