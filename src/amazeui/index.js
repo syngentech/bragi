@@ -1,5 +1,3 @@
-// Amaze UI
-
 require('./style.scss');
 
 require('../../vendor/amazeui/js/core.js');
