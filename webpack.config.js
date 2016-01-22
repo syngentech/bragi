@@ -1,21 +1,36 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = {
   entry: {
-    bragi: "./src/bragi.js"
+    bragi: './src/bragi.js',
+    docs:  './src/docs.js'
   },
   output: {
-    filename: "./dist/js/[name].js"
+    path: './dist',
+    publicPath: '/',
+    filename: './js/[name].js'
   },
   module: {
     loaders: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue'
       }
     ]
   },
+  vue: {
+    loaders: {
+      scss: 'style!css!sass'
+    }
+  },
   plugins: [
-      new ExtractTextPlugin("./dist/css/[name].css")
+    new ExtractTextPlugin('./css/[name].css'),
+    new CommonsChunkPlugin('bragi', './js/bragi.js')
   ]
 };
