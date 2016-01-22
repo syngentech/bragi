@@ -1,1 +1,7 @@
+// Larger radius
+$radius-normal: 5px;
+
 @import "../vendor/amazeui/scss/variables.scss";
+
+// Larger font size
+$font-size-4xl: $global-font-size * 3 + 0.8 !default; // 56px

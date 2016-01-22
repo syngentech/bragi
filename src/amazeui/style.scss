@@ -1,7 +1,7 @@
 // Amaze UI Styles
 
 // Core variables and mixins
-@import "../../vendor/amazeui/scss/variables.scss";
+@import "../variables.scss";
 @import "../../vendor/amazeui/scss/mixins.scss";
 
 // Defaults
@@ -37,10 +37,10 @@
 @import "../../vendor/amazeui/scss/panel.scss";
 @import "../../vendor/amazeui/scss/progress.scss";
 @import "../../vendor/amazeui/scss/thumbnail.scss";
-@import "../../vendor/amazeui/scss/utility.scss";
+@import "./utility.scss";
 
 // JavaScript Plugins
-@import "../../vendor/amazeui/scss/ui.alert.scss";
+@import "./ui.alert.scss";
 @import "../../vendor/amazeui/scss/ui.dropdown.scss";
 @import "../../vendor/amazeui/scss/ui.flexslider.scss";
 @import "../../vendor/amazeui/scss/ui.modal.scss";
