@@ -1,0 +1,16 @@
+{
+  "name": "syngentech-bragi",
+  "version": "0.1.0",
+  "description": "合生基因前端框架",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syngentech/bragi.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/syngentech/bragi/issues"
+  },
+  "homepage": "http://syngentech.github.io/bragi/"
+}
