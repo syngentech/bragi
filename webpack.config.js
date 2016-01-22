@@ -8,9 +8,9 @@ module.exports = {
     docs:  './src/docs.js'
   },
   output: {
-    path: './build',
+    path: './dist',
     publicPath: '/',
-    filename: './js/[name].js'
+    filename: './[name].js'
   },
   externals: [
     {
@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   plugins: [
-    new ExtractTextPlugin('./css/[name].css'),
-    new CommonsChunkPlugin('bragi', './js/bragi.js')
+    new ExtractTextPlugin('./[name].css'),
+    new CommonsChunkPlugin('bragi', './bragi.js')
   ]
 };

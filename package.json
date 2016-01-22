@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "npm run build && npm run watch",
     "build": "webpack",
-    "watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base build/",
-    "pack":  "gulp"
+    "watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base dist/",
+    "pack": "gulp"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babel-runtime": "^5.8.35",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-minify-css": "^1.2.3",
     "gulp-rename": "^1.2.2",

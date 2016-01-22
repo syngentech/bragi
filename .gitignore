@@ -1,6 +1,2 @@
 # Ignore node modules
 node_modules/
-
-# Ignore built files
-build/*
-!build/index.html
