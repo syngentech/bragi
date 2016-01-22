@@ -1,3 +1,4 @@
 /*
   Bragi Bundle
 */
+require('./amazeui');

@@ -1,0 +1,63 @@
+// Amaze UI Styles
+
+// Core variables and mixins
+@import "../../vendor/amazeui/scss/variables.scss";
+@import "../../vendor/amazeui/scss/mixins.scss";
+
+// Defaults
+@import "../../vendor/amazeui/scss/base.scss";
+
+// Layout
+@import "../../vendor/amazeui/scss/grid.scss";
+@import "../../vendor/amazeui/scss/block-grid.scss";
+
+// Elements
+@import "../../vendor/amazeui/scss/code.scss";
+@import "../../vendor/amazeui/scss/button.scss";
+@import "../../vendor/amazeui/scss/table.scss";
+@import "../../vendor/amazeui/scss/form.scss";
+@import "../../vendor/amazeui/scss/image.scss";
+
+// Nav
+@import "../../vendor/amazeui/scss/nav.scss";
+@import "../../vendor/amazeui/scss/topbar.scss";
+@import "../../vendor/amazeui/scss/breadcrumb.scss";
+@import "../../vendor/amazeui/scss/pagination.scss";
+
+// Common
+@import "../../vendor/amazeui/scss/animation.scss";
+@import "../../vendor/amazeui/scss/article.scss";
+@import "../../vendor/amazeui/scss/badge.scss";
+@import "../../vendor/amazeui/scss/comment.scss";
+@import "../../vendor/amazeui/scss/button-group.scss";
+@import "../../vendor/amazeui/scss/close.scss";
+@import "../../vendor/amazeui/scss/icon.scss";
+@import "../../vendor/amazeui/scss/input-group.scss";
+@import "../../vendor/amazeui/scss/list.scss";
+@import "../../vendor/amazeui/scss/panel.scss";
+@import "../../vendor/amazeui/scss/progress.scss";
+@import "../../vendor/amazeui/scss/thumbnail.scss";
+@import "../../vendor/amazeui/scss/utility.scss";
+
+// JavaScript Plugins
+@import "../../vendor/amazeui/scss/ui.alert.scss";
+@import "../../vendor/amazeui/scss/ui.dropdown.scss";
+@import "../../vendor/amazeui/scss/ui.flexslider.scss";
+@import "../../vendor/amazeui/scss/ui.modal.scss";
+@import "../../vendor/amazeui/scss/ui.offcanvas.scss";
+@import "../../vendor/amazeui/scss/ui.popover.scss";
+@import "../../vendor/amazeui/scss/ui.progress.scss";
+@import "../../vendor/amazeui/scss/ui.tabs.scss";
+@import "../../vendor/amazeui/scss/ui.share.scss";
+@import "../../vendor/amazeui/scss/ui.pureview.scss";
+@import "../../vendor/amazeui/scss/ui.add2home.scss";
+@import "../../vendor/amazeui/scss/ui.ucheck.scss";
+@import "../../vendor/amazeui/scss/ui.selected.scss";
+@import "../../vendor/amazeui/scss/ui.component.scss";
+@import "../../vendor/amazeui/scss/ui.datepicker.scss";
+
+// Print
+@import "../../vendor/amazeui/scss/print.scss";
+
+// Legacy
+@import "../../vendor/amazeui/scss/legacy.ie.scss";
