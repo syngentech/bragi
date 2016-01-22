@@ -12,5 +12,11 @@
   "bugs": {
     "url": "https://github.com/syngentech/bragi/issues"
   },
-  "homepage": "http://syngentech.github.io/bragi/"
+  "homepage": "http://syngentech.github.io/bragi/",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "webpack": "^1.12.11"
+  }
 }
