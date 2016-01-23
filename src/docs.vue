@@ -1,10 +1,13 @@
 <template lang="jade">
 .am-container.am-padding
-  h1.am-margin-top-lg.am-text-center Bragi
+  #header.am-margin-top-lg.am-text-center Bragi
   div.am-text-right v{{ package.version }}
   hr
-  .am-avg-sm-2.am-avg-md-3
-    a(v-link="{ path: '/amazeui' }") amazeui
+  ul.am-avg-sm-2.am-avg-md-3
+    li
+      a(v-link="{ path: '/amazeui' }") amazeui
+    li
+      a(v-link="{ path: '/status-progressbar' }") status-progressbar
   hr
   router-view
 </template>
@@ -20,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-h1 {
+#header {
   font-size: 96px;
 }
 </style>

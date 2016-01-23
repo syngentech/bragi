@@ -13,6 +13,9 @@ var router = new Router();
 router.map({
   '/amazeui': {
     component: require('./amazeui/docs.vue')
+  },
+  '/status-progressbar': {
+    component: require('./status-progressbar/docs.vue')
   }
 });
 
