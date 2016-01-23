@@ -8,15 +8,10 @@ module.exports = {
     docs:  './src/docs.js'
   },
   output: {
-    path: './dist',
+    path: './bundle',
     publicPath: '/',
     filename: './[name].js'
   },
-  externals: [
-    {
-      jquery: 'jQuery'
-    }
-  ],
   module: {
     loaders: [
       {

@@ -7,17 +7,19 @@ gulp.task('bundle', function() {
 });
 
 gulp.task('js', ['bundle'], function() {
-  return gulp.src('./dist/bragi.js')
+  return gulp.src('bundle/bragi.js')
+    .pipe(gulp.dest('build/'))
     .pipe(require('gulp-uglify')())
     .pipe(rename({extname: '.min.js'}))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('css', ['bundle'], function(){
- return gulp.src('./dist/bragi.css')
-   .pipe(require('gulp-minify-css')())
-   .pipe(rename({extname: '.min.css'}))
-   .pipe(gulp.dest('./dist/'));
+  return gulp.src('bundle/bragi.css')
+    .pipe(gulp.dest('build/'))
+    .pipe(require('gulp-minify-css')())
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('default', ['js', 'css']);

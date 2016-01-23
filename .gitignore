@@ -1,10 +1,6 @@
 # Ignore node modules
 node_modules/
 
-# Ignore built files
-dist/*
-!dist/bragi.css
-!dist/bragi.min.css
-!dist/bragi.js
-!dist/bragi.min.js
-!dist/index.html
+# Ignore built bundles
+bundle/*
+!bundle/index.html

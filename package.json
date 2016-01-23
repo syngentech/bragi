@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run bundle && npm run watch",
     "bundle": "webpack",
-    "watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base dist/",
+    "watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base bundle/",
     "build": "gulp"
   },
   "repository": {
