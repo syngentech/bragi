@@ -2,7 +2,7 @@
 h1 Amaze UI
 
 h2#utility 辅助类
-h3#am-text-size 文字大小
+h3 .am-text-4xl
 section {{{ am_text_4xl }}}
   pre.am-pre-scrollable {{ am_text_4xl }}
 
