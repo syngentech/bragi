@@ -92,18 +92,19 @@ var d3 = require('d3');
 
   // Extend jQuery object
   $.fn.Plasmid = function(options) {
+    var self = this;
 
     // Get options
     var opts = $.extend({}, $.fn.Plasmid.defaults, options);
 
     // Get gbff by AJAX
-    if (opts['gbff-url']) $.ajax({ url: opts['gbff-url'] }).done(function(data) {
+    if (opts.gbffUrl) $.ajax({ url: opts.gbffUrl }).done(function(data) {
       opts.gbff = $.Plasmid.parse(data);
-      render.bind(this)(opts);
-    }.bind(this));
+      render.bind(self[0])(opts);
+    });
 
     // Render SVG
-    render.bind(this)(opts);
+    render.bind(self[0])(opts);
   };
 
   // Default options
@@ -114,9 +115,9 @@ var d3 = require('d3');
     rotate: -90,
     innerRadius: 115,
     outerRadius: 140,
-    text_magin: 20,
-    small_interval_angle: 5,
-    large_interval_angle: 30,
+    textMargin: 20,
+    smallIntervalAngle: 5,
+    largeIntervalAngle: 30,
   };
 
   // Render the plasmid based on opts
@@ -126,13 +127,13 @@ var d3 = require('d3');
     var color = d3.scale.category10();
 
     // Clear
-    $(this).html('');
+    $(this).addClass('plasmid').html('');
 
     // Reset id
     opts.id = Math.ceil(Math.pow(10, 8) + 9 * Math.pow(10, 8) * Math.random());
 
     // Initialize
-    svg = d3.select(this[0])
+    svg = d3.select(this)
       .append('svg')
         .attr('width', opts.outerSize)
         .attr('height', opts.outerSize)
@@ -174,33 +175,33 @@ var d3 = require('d3');
     if (opts.gbff === undefined) return;
 
     // Plasmid title
-    title = g = svg.append('g').attr('transform', titleTransform);
+    g = svg.append('g').attr('transform', titleTransform);
     g.append('text').text(opts.gbff.name).classed('title', true);
-    g.append('text').text(opts.gbff.length + ' bp').attr('y', opts.text_magin);
+    g.append('text').text(opts.gbff.length + ' bp').attr('y', opts.textMargin);
 
     // Ticks
-    ticks = g = svg.append('g')
-      .selectAll('g').data(d3.range(0, 359, opts.small_interval_angle))
+    g = svg.append('g')
+      .selectAll('g').data(d3.range(0, 359, opts.smallIntervalAngle))
       .enter().append('g')
         .attr('transform', ticksTransform);
-    tickTexts = g.filter(function(d) { return d % opts.large_interval_angle === 0; })
+    tickTexts = g.filter(function(d) { return d % opts.largeIntervalAngle === 0; })
       .append('text')
         .attr('fill', '#999')
         .attr('transform', tickTextsTransform)
         .text(function(d) { return Math.floor(opts.gbff.length / 360 * d); });
-    g.filter(function(d) { return d % opts.large_interval_angle === 0; })
+    g.filter(function(d) { return d % opts.largeIntervalAngle === 0; })
       .append('line')
-        .attr('x1', opts.text_magin - 4).attr('y1', 0)
-        .attr('x2', opts.text_magin - 1).attr('y2', 0)
+        .attr('x1', opts.textMargin - 4).attr('y1', 0)
+        .attr('x2', opts.textMargin - 1).attr('y2', 0)
         .attr('stroke', '#f00');
-    g.filter(function(d) { return d % opts.large_interval_angle !== 0; })
+    g.filter(function(d) { return d % opts.largeIntervalAngle !== 0; })
       .append('line')
-      .attr('x1', opts.text_magin - 4).attr('y1', 0)
-      .attr('x2', opts.text_magin - 1).attr('y2', 0)
+      .attr('x1', opts.textMargin - 4).attr('y1', 0)
+      .attr('x2', opts.textMargin - 1).attr('y2', 0)
       .attr('stroke', '#999');
     g.append('line')
-      .attr('x1', opts.outerRadius - opts.innerRadius + opts.text_magin + 1).attr('y1', 0)
-      .attr('x2', opts.outerRadius - opts.innerRadius + opts.text_magin + 4).attr('y2', 0)
+      .attr('x1', opts.outerRadius - opts.innerRadius + opts.textMargin + 1).attr('y1', 0)
+      .attr('x2', opts.outerRadius - opts.innerRadius + opts.textMargin + 4).attr('y2', 0)
       .attr('stroke', '#999');
 
     // Prepare features
@@ -280,7 +281,7 @@ var d3 = require('d3');
     g.filter(function(d) { return d.loc.angle < 4;}).append('line')
       .attr('transform', function(d) { return 'rotate(' + ((d.loc.startAngle + d.loc.endAngle) / 2) + ')'; })
       .attr('x1', opts.innerRadius).attr('y1', 0)
-      .attr('x2', opts.outerRadius + opts.text_magin).attr('y2', 0)
+      .attr('x2', opts.outerRadius + opts.textMargin).attr('y2', 0)
       .attr('stroke', '#999')
       .on('mouseover', featureOnMouseover)
       .on('mouseout', featureOnMouseout);
@@ -299,7 +300,7 @@ var d3 = require('d3');
         } else if (d.loc.angle > 4) {
           radius = opts.outerRadius + 15;
         } else {
-          radius = opts.outerRadius + opts.text_magin + 15;
+          radius = opts.outerRadius + opts.textMargin + 15;
         }
         return 'M ' + polar2orth(radius, (d.loc.startAngle + d.loc.endAngle) / 2 + opts.rotate) +
           ' A ' + radius + ',' + radius + ' 0,0,1 ' +
@@ -337,7 +338,7 @@ var d3 = require('d3');
     }
 
     function ticksTransform(d) {
-      return 'rotate(' + (d) + ')translate(' + (opts.innerRadius - opts.text_magin) + ',0)';
+      return 'rotate(' + (d) + ')translate(' + (opts.innerRadius - opts.textMargin) + ',0)';
     }
 
     function tickTextsTransform(d) {
