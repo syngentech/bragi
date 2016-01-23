@@ -14,6 +14,9 @@ router.map({
   '/amazeui': {
     component: require('./amazeui/docs.vue')
   },
+  '/plasmid': {
+    component: require('./plasmid/docs.vue')
+  },
   '/status-progressbar': {
     component: require('./status-progressbar/docs.vue')
   }

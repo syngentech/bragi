@@ -7,6 +7,8 @@
     li
       a(v-link="{ path: '/amazeui' }") amazeui
     li
+      a(v-link="{ path: '/plasmid' }") plasmid
+    li
       a(v-link="{ path: '/status-progressbar' }") status-progressbar
   hr
   router-view
