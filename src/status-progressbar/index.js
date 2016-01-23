@@ -1,23 +1,9 @@
 require('./style.scss');
 
 (function($) {
-  // Run automatically
-  $(document).on('ready', function() {
-    $('[data-am-status-progressbar]').each(function() {
-      $(this).StatusProgressbar(JSON.parse($(this).attr('data-am-status-progressbar')));
-    });
-  });
-
-  // Render when resize
-  $(window).on('resize', function() {
-    $('[data-am-status-progressbar]').each(function() {
-      $(this).StatusProgressbar(JSON.parse($(this).attr('data-am-status-progressbar')));
-    });
-  });
-
   // Extend jQuery object
   $.fn.StatusProgressbar = function(opts) {
-    var ul = $(this).addClass('am-status-progressbar').html('');
+    var ul = $(this).addClass('status-progressbar').html('');
 
     if (opts.dataJson) {
        render(opts.dataJson);
