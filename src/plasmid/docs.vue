@@ -60,7 +60,7 @@ export default {
    },
  },
  attached: function() {
-   $('#plasmid').Plasmid({"outerSize":400, "gbff-url": selected});
+   $('#plasmid').Plasmid({"outerSize":400, "gbff-url": this.selected});
  }
 }
 </script>
