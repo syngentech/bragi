@@ -1,0 +1,5 @@
+# Ignore files for master
+build/
+bundle/
+node_modules/
+vendor/
