@@ -3,9 +3,9 @@ h1 Plasmid
 
 h2 使用方式
 h3 解析
-pre.am-pre-scrollable {{ pre.parser }}
+pre {{ pre.parser }}
 h3 渲染
-pre.am-pre-scrollable {{ pre.render }}
+pre {{ pre.render }}
 
 h2 使用案例
 .am-g.am-margin-top
@@ -76,6 +76,12 @@ export default {
    },
  },
  attached: function() {
+   $(document).ready(function() {
+     $('pre').each(function(i, block) {
+       hljs.highlightBlock(block);
+     });
+   });
+
    $('span.plasmid').each(function() {
      $(this).Plasmid({ outerSize: $(this).attr('data-outerSize'), gbffUrl: $(this).attr('data-gbffUrl') });
    });
