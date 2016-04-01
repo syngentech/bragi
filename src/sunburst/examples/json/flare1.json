@@ -1,0 +1,27 @@
+{
+  "name": "flare1",
+  "children": [
+    {
+      "name": "one",
+      "children": [
+        {"name": "one-one"}
+      ]
+    },
+    {
+      "name": "two",
+      "children": [
+        {"name": "two-one"},
+        {"name": "two-two"},
+        {"name": "two-three"}
+      ]
+    },
+    {
+      "name": "three",
+      "children": [
+        {"name": "three-one"},
+        {"name": "three-two"},
+        {"name": "three-three"}
+      ]
+    }
+  ]
+}

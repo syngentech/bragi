@@ -1,6 +1,6 @@
 /*
-  Bragi Docs
-*/
+ Bragi Docs
+ */
 var Vue = require('vue');
 var Router = require('vue-router');
 
@@ -19,11 +19,26 @@ router.map({
   },
   '/status-progressbar': {
     component: require('./status-progressbar/docs.vue')
+  },
+  '/sunburst': {
+    component: require('./sunburst/docs.vue'),
+    subRoutes: {
+      '/single': {
+        component: require('./sunburst/examples/single.vue')
+      },
+      '/cascaded': {
+        component: require('./sunburst/examples/cascaded.vue')
+      },
+      '/sunburst': {
+        component: require('./sunburst/examples/sunburst.vue')
+      }
+    }
   }
 });
 
 router.redirect({
-  '*': '/amazeui'
+  '*': '/amazeui',
+  '/sunburst': '/sunburst/single'
 });
 
 router.start(require('./docs.vue'), '#app');

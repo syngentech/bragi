@@ -1,0 +1,19 @@
+.sunburst path { stroke: #fff; }
+.sunburst .tooltip {
+  position: absolute;
+  left:20px;
+  top:20px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1px 1px;
+  opacity: 0;
+}
+.sunburst .div0 {
+  float: left;
+}
+.sunburst .div1 {
+  float: right;
+}

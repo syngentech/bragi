@@ -10,3 +10,5 @@ if(window) {
 require('./amazeui');
 require('./plasmid');
 require('./status-progressbar');
+require('./sunburst');
+

@@ -10,8 +10,10 @@
       a(v-link="{ path: '/plasmid' }") plasmid
     li
       a(v-link="{ path: '/status-progressbar' }") status-progressbar
+    li
+      a(v-link="{ path: '/sunburst' }") sunburst
   hr
-  router-view
+  <router-view></router-view>
 </template>
 
 <script>
