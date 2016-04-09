@@ -3,8 +3,8 @@ webpackJsonp([1],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	  Bragi Docs
-	*/
+	 Bragi Docs
+	 */
 	var Vue = __webpack_require__(48);
 	var Router = __webpack_require__(49);
 
@@ -23,6 +23,9 @@ webpackJsonp([1],[
 	  },
 	  '/status-progressbar': {
 	    component: __webpack_require__(67)
+	  },
+	  '/sunburst': {
+	    component: __webpack_require__(73)
 	  }
 	});
 
@@ -30,7 +33,7 @@ webpackJsonp([1],[
 	  '*': '/amazeui'
 	});
 
-	router.start(__webpack_require__(73), '#app');
+	router.start(__webpack_require__(82), '#app');
 
 
 /***/ },
@@ -9608,7 +9611,7 @@ webpackJsonp([1],[
 	}
 
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ },
 /* 49 */
@@ -12248,7 +12251,7 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	__webpack_require__(2);
+	__webpack_require__(3);
 
 	exports.default = {
 	  data: function data() {
@@ -12304,7 +12307,7 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	__webpack_require__(41);
+	__webpack_require__(42);
 
 	exports.default = {
 	  data: function data() {
@@ -12466,6 +12469,7 @@ webpackJsonp([1],[
 	});
 
 	__webpack_require__(45);
+
 	exports.default = {
 	  data: function data() {
 	    return {
@@ -12579,7 +12583,7 @@ webpackJsonp([1],[
 	var __vue_script__, __vue_template__
 	__webpack_require__(74)
 	__vue_script__ = __webpack_require__(76)
-	__vue_template__ = __webpack_require__(78)
+	__vue_template__ = __webpack_require__(81)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12587,7 +12591,7 @@ webpackJsonp([1],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/aidistan/Projects/syngentech/bragi/src/docs.vue"
+	  var id = "/home/aidistan/Projects/syngentech/bragi/src/sunburst/docs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12605,7 +12609,234 @@ webpackJsonp([1],[
 	var content = __webpack_require__(75);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c16d8e64&file=docs.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./docs.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c16d8e64&file=docs.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./docs.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".sunburst path {\n  stroke: #fff; }\n\n.sunburst .tooltip {\n  position: absolute;\n  top: 20px;\n  left: 20px;\n  padding: 3px;\n  opacity: 0;\n  color: #eee;\n  border-radius: 5px;\n  background-color: rgba(0, 0, 0, 0.618);\n  font-size: 16px;\n  font-weight: bold; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(77);
+
+	module.exports = {
+	  attached: function attached() {
+	    $('#single-sunburst').Sunburst({
+	      dataUrl: __webpack_require__(80)
+	    });
+	  }
+	};
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(78);
+
+	var d3 = __webpack_require__(2);
+
+	(function ($) {
+	  // Extend jQuery object
+	  $.fn.Sunburst = function (opts) {
+	    opts = $.extend({}, $.Sunburst.defaults, opts);
+	    this.each(function(){
+	      $(this).addClass('sunburst').html('');
+	      render.bind(this)(opts);
+	    })
+	  };
+
+	  // Default options
+	  $.Sunburst = {
+	    defaults: {
+	      size: 600
+	    }
+	  };
+
+	  // Render sunburst
+	  function render(opts) {
+	    var color = d3.scale.category20c();
+	    var radius = opts.size / 2;
+	    var x = d3.scale.linear().range([0, Math.PI * 2]);
+	    var y = d3.scale.linear().range([0, radius]);
+	    var svg = d3.select(this).append('svg')
+	      .attr('width', opts.size)
+	      .attr('height', opts.size)
+	      .append('g')
+	        .attr('transform', 'translate(' + opts.size / 2 + ',' + opts.size / 2 + ')');
+
+	    // Define partition
+	    var partition = d3.layout.partition()
+	      .sort(null)
+	      .value(function (d) { return 1; });
+
+	    // Define arc
+	    var arc = d3.svg.arc()
+	      .startAngle(function (d) { return Math.max(0, Math.min(Math.PI * 2, x(d.x))); })
+	      .endAngle(function (d) { return Math.max(0, Math.min(Math.PI * 2, x(d.x + d.dx))); })
+	      .innerRadius(function (d) { return Math.min(radius, y(d.y)); })
+	      .outerRadius(function (d) { return Math.min(radius, y(d.y + d.dy)); });
+
+	    // Draw tooltip
+	    var tooltip = d3.select(this).append('div').attr('class', 'tooltip');
+
+	    // Init nodes
+	    var node, g, path;
+	    if (opts.dataJson) {
+	      initNode(opts.dataJson);
+	    } else if (opts.dataUrl) {
+	      d3.json(opts.dataUrl, function (error, json) { initNode(json); });
+	    }
+
+	    function initNode(json) {
+	      node = json;
+	      g = svg.datum(json).selectAll('g')
+	        .data(partition.nodes)
+	        .enter().append('g');
+	      path = g.append('path')
+	        .attr('d', arc)
+	        .style('fill', function (d) {
+	          return color((d.children ? d : d.parent).name);
+	        })
+	        .each(function(d) {
+	          d.x0 = d.x;
+	          d.dx0 = d.dx;
+	        })
+	        .on('mousemove', function (d) {
+	          tooltip.html(d.name).style('opacity', 1.0)
+	            .style('left', d3.event.pageX + 'px')
+	            .style('top', d3.event.pageY + 20 + 'px');
+	          d3.select(this).style('fill', 'yellow');
+	        })
+	        .on('mouseout', function (d) {
+	          tooltip.style('opacity', 0);
+	          d3.select(this).style('fill', function (d) {
+	            return color((d.children ? d : d.parent).name);
+	          });
+	        })
+	        .on('click', click);
+
+	      function click(d, i) {
+	        if (opts.preClick) { opts.preClick.call(this, d, i); }
+	        node = d;
+	        path.transition()
+	          .duration(1000)
+	          .attrTween('d', arcTweenZ(d));
+	      }
+	    }
+
+	    function arcTweenZ(d) {
+	      var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]);
+	      var yd = d3.interpolate(y.domain(), [d.y, 1]);
+	      var yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+	      return function (d, i) {
+	        return i ?
+	          function () { return arc(d); } :
+	          function (t) { x.domain(xd(t)); y.domain(yd(t)); y.range(yr(t)); return arc(d); };
+	      };
+	    }
+
+	    function arcTweenData(a, i) {
+	      var oi = d3.interpolate({ x: a.x0, dx: a.dx0 }, a);
+
+	      function tween(t) {
+	        var b = oi(t);
+	        b.x0 = a.x;
+	        b.dx0 = a.dx;
+	        return arc(b);
+	      }
+
+	      if (i === 0) {
+	        var xd = d3.interpolate(x.domain(), [node.x, node.dx + node.x]);
+	        return function (t) { x.domain(xd(t)); return tween(t); };
+	      } else {
+	        return tween;
+	      }
+	    }
+	  }
+	})(__webpack_require__(1));
+
+
+/***/ },
+/* 78 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 79 */,
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "8ed59881262cb77a6d57581fe45e4cfe.json";
+
+/***/ },
+/* 81 */
+/***/ function(module, exports) {
+
+	module.exports = "<h1>Sunburst</h1><h2>使用案例</h2><div class=\"am-text-center\"><div id=\"single-sunburst\"></div></div>";
+
+/***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(83)
+	__vue_script__ = __webpack_require__(85)
+	__vue_template__ = __webpack_require__(87)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/home/aidistan/Projects/syngentech/bragi/src/docs.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(84);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -12622,10 +12853,10 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 75 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 
 
@@ -12636,7 +12867,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 76 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12647,13 +12878,13 @@ webpackJsonp([1],[
 	exports.default = {
 	  data: function data() {
 	    return {
-	      package: __webpack_require__(77)
+	      package: __webpack_require__(86)
 	    };
 	  }
 	};
 
 /***/ },
-/* 77 */
+/* 86 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12661,10 +12892,9 @@ webpackJsonp([1],[
 		"version": "0.1.0",
 		"description": "合生基因前端框架",
 		"scripts": {
-			"dev": "npm run bundle && npm run watch",
 			"bundle": "webpack",
-			"watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base bundle/",
-			"build": "gulp"
+			"build": "npm run bundle && gulp",
+			"dev": "npm run bundle && webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base bundle/"
 		},
 		"repository": {
 			"type": "git",
@@ -12691,6 +12921,7 @@ webpackJsonp([1],[
 			"gulp-rename": "^1.2.2",
 			"gulp-uglify": "^1.5.1",
 			"gulp-webpack": "^1.5.0",
+			"html-loader": "^0.4.3",
 			"jade": "^1.11.0",
 			"jade-loader": "^0.8.0",
 			"jquery": "^2.2.0",
@@ -12711,10 +12942,10 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 78 */
+/* 87 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-container am-padding\"><div id=\"header\" class=\"am-margin-top-lg am-text-center\">Bragi</div><div class=\"am-text-right\">v{{ package.version }}</div><hr/><ul class=\"am-avg-sm-2 am-avg-md-3\"><li><a v-link=\"{ path: '/amazeui' }\">amazeui</a></li><li><a v-link=\"{ path: '/plasmid' }\">plasmid</a></li><li><a v-link=\"{ path: '/status-progressbar' }\">status-progressbar</a></li></ul><hr/><router-view></router-view></div>";
+	module.exports = "<div class=\"am-container am-padding\"><div id=\"header\" class=\"am-margin-top-lg am-text-center\">Bragi</div><div class=\"am-text-right\">v{{ package.version }}</div><hr/><ul class=\"am-avg-sm-2 am-avg-md-3\"><li><a v-link=\"{ path: '/amazeui' }\">amazeui</a></li><li><a v-link=\"{ path: '/plasmid' }\">plasmid</a></li><li><a v-link=\"{ path: '/status-progressbar' }\">status-progressbar</a></li><li><a v-link=\"{ path: '/sunburst' }\">sunburst</a></li></ul><hr/><router-view></router-view></div>";
 
 /***/ }
 ]);

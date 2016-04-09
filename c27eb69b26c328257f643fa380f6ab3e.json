@@ -1,0 +1,41 @@
+{
+  "name": "flare2",
+  "children": [
+    {
+      "name": "one",
+      "children": [
+        {"name": "one-one"}
+      ]
+    },
+    {
+      "name": "two",
+      "children": [
+        {"name": "two-one"},
+        {
+          "name": "two-two",
+          "children": [
+            {"name": "two-two-one"},
+            {"name": "two-two-two"},
+            {"name": "two-two-three"}
+          ]
+        },
+        {
+          "name": "two-three",
+          "children": [
+            {"name": "two-three-one"},
+            {"name": "two-three-two"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "three",
+      "children": [
+        {"name": "three-one"},
+        {"name": "three-two"},
+        {"name": "three-three"},
+        {"name": "three-four"}
+      ]
+    }
+  ]
+}
