@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "description": "合生基因前端框架",
   "scripts": {
-    "dev": "npm run bundle && npm run watch",
     "bundle": "webpack",
-    "watch": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base bundle/",
-    "build": "gulp"
+    "build": "npm run bundle && gulp",
+    "dev": "npm run bundle && webpack-dev-server --inline --hot --quiet --host 0.0.0.0 --content-base bundle/"
   },
   "repository": {
     "type": "git",

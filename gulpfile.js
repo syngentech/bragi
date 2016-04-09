@@ -1,12 +1,7 @@
-var cp = require('child_process');
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 
-gulp.task('bundle', function() {
-  cp.execSync('npm run bundle');
-});
-
-gulp.task('js', ['bundle'], function() {
+gulp.task('js', function() {
   return gulp.src('bundle/bragi.js')
     .pipe(gulp.dest('build/'))
     .pipe(require('gulp-uglify')())
@@ -14,7 +9,7 @@ gulp.task('js', ['bundle'], function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('css', ['bundle'], function(){
+gulp.task('css', function(){
   return gulp.src('bundle/bragi.css')
     .pipe(gulp.dest('build/'))
     .pipe(require('gulp-minify-css')())
