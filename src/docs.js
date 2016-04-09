@@ -21,24 +21,12 @@ router.map({
     component: require('./status-progressbar/docs.vue')
   },
   '/sunburst': {
-    component: require('./sunburst/docs.vue'),
-    subRoutes: {
-      '/single': {
-        component: require('./sunburst/examples/single.vue')
-      },
-      '/cascaded': {
-        component: require('./sunburst/examples/cascaded.vue')
-      },
-      '/sunburst': {
-        component: require('./sunburst/examples/sunburst.vue')
-      }
-    }
+    component: require('./sunburst/docs.vue')
   }
 });
 
 router.redirect({
-  '*': '/amazeui',
-  '/sunburst': '/sunburst/single'
+  '*': '/amazeui'
 });
 
 router.start(require('./docs.vue'), '#app');

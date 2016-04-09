@@ -30,6 +30,7 @@ h3 Success
 
 <script>
 require('./');
+
 export default {
   data: function() {
     return {

@@ -3,12 +3,11 @@
 */
 
 if(window) {
-  window.$ = require('jquery');
-  window.d3 = require('jquery');
+  window.$ = window.jQuery = require('jquery');
+  window.d3 = require('d3');
 }
 
 require('./amazeui');
 require('./plasmid');
 require('./status-progressbar');
-require('./sunburst');
-
+// require('./sunburst');
