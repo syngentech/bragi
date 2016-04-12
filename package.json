@@ -1,6 +1,6 @@
 {
   "name": "syngentech-bragi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "合生基因前端框架",
   "scripts": {
     "bundle": "webpack",
