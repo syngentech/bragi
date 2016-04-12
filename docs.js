@@ -19,13 +19,13 @@ webpackJsonp([1],[
 	    component: __webpack_require__(50)
 	  },
 	  '/plasmid': {
-	    component: __webpack_require__(53)
+	    component: __webpack_require__(55)
 	  },
 	  '/status-progressbar': {
-	    component: __webpack_require__(67)
+	    component: __webpack_require__(69)
 	  },
 	  '/sunburst': {
-	    component: __webpack_require__(73)
+	    component: __webpack_require__(75)
 	  }
 	});
 
@@ -33,7 +33,7 @@ webpackJsonp([1],[
 	  '*': '/amazeui'
 	});
 
-	router.start(__webpack_require__(82), '#app');
+	router.start(__webpack_require__(84), '#app');
 
 
 /***/ },
@@ -12224,8 +12224,9 @@ webpackJsonp([1],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(51)
-	__vue_template__ = __webpack_require__(52)
+	__webpack_require__(51)
+	__vue_script__ = __webpack_require__(53)
+	__vue_template__ = __webpack_require__(54)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12245,6 +12246,46 @@ webpackJsonp([1],[
 /* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(52);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-663d66a4&file=docs.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./docs.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-663d66a4&file=docs.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./docs.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "#am-icon {\n  background-image: url(\"//assets.syngentech.com.cn/fonts/font-awesome/4.3.0\"); }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -12256,32 +12297,52 @@ webpackJsonp([1],[
 	exports.default = {
 	  data: function data() {
 	    return {
-	      am_text_4xl: '<p class="am-text-4xl am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>',
-	      am_alert: '<div class="am-alert">没什么可给你，但求凭这阙歌。谢谢你风雨里，都不退愿陪着我。</div>'
+	      am_alert: '<div class="am-alert">没什么可给你，但求凭这阙歌。谢谢你风雨里，都不退愿陪着我。</div>',
+	      am_footer: '<footer class="am-footer">\n  <div class="am-footer-text am-footer-text-left">北京合生基因科技有限公司是国内第一家专注于合成生物学在科研和医药健康领域应用的生物技术公司。公司将秉持“科教兴国、产业报国、健康强国”理念，以“在过程中寻找机会、在发展中解决问题、在创新中获得效益”为思路，以发展民族生物产业为己任，努力成为集合成生物学技术研发、科研服务和产品销售于一体的新型生物医药技术型企业。</div>\n  <div class="am-footer-text">服务条款<span class="am-footer-divider"> | </span>帮助中心<span class="am-footer-divider"> | </span>联系我们</div>\n  <div class="am-footer-miscs">\n    <p>&copy; Beijing SyngenTech Co., Ltd.</p>\n  </div>\n</footer>',
+	      am_icon: {
+	        class: 'am-icon-spinner am-icon-spin',
+	        text: '查询中'
+	      },
+	      am_text_4xl: '<p class="am-text-4xl am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>'
 	    };
 	  },
 	  attached: function attached() {
+	    var self = this;
+
 	    $(document).ready(function () {
 	      $('pre').each(function (i, block) {
 	        hljs.highlightBlock(block);
+	      });
+
+	      $.ajax({
+	        url: $('#am-icon').css('background-image').slice(5, -2),
+	        complete: function complete(res) {
+	          if (res.status === 200) {
+	            self.am_icon.class = 'am-icon-check am-text-success';
+	            self.am_icon.text = '正常';
+	          } else {
+	            self.am_icon.class = 'am-icon-times am-text-danger';
+	            self.am_icon.text = '异常';
+	          }
+	        }
 	      });
 	    });
 	  }
 	};
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1>Amaze UI</h1><h2 id=\"am-icon\">图标</h2><p>使用自托管资源</p><section><i class=\"am-icon-github am-margin-right-sm\"></i><span>GitHub</span></section><h2 id=\"utility\">辅助类</h2><h3 id=\"am-text-4xl\">.am-text-4xl</h3><section>{{{ am_text_4xl }}}<pre>{{ am_text_4xl }}</pre></section><h2 id=\"am-alert\">警告框</h2><section>{{{ am_alert }}}<pre>{{ am_alert }}</pre></section>";
+	module.exports = "<h1>Amaze UI</h1><h2 id=\"am-alert\">Alert</h2><section>{{{ am_alert }}}<pre>{{ am_alert }}</pre></section><h2 id=\"am-footer\">Footer</h2><section>{{{ am_footer }}}<pre>{{ am_footer }}</pre></section><h2 id=\"am-icon\">Icon</h2><p>使用自托管资源，当前 CDN 状态：<i :class=\"am_icon.class\" class=\"am-margin-right-xs\"></i><span>{{ am_icon.text }}</span></p><h2 id=\"utility\">Utility</h2><h3 id=\"am-text-4xl\">.am-text-4xl</h3><section>{{{ am_text_4xl }}}<pre>{{ am_text_4xl }}</pre></section>";
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(54)
-	__vue_template__ = __webpack_require__(66)
+	__vue_script__ = __webpack_require__(56)
+	__vue_template__ = __webpack_require__(68)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12298,7 +12359,7 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12317,17 +12378,17 @@ webpackJsonp([1],[
 	        render: '$(\'#plasmid\').Plasmid({ gbffUrl: GBFF_URL })'
 	      },
 	      gbff: {
-	        pB002: __webpack_require__(55),
-	        pB039: __webpack_require__(56),
-	        pB039_F: __webpack_require__(57),
-	        pHCKanP: __webpack_require__(58),
-	        pY001: __webpack_require__(59),
-	        pY108: __webpack_require__(60),
-	        pY122: __webpack_require__(61),
-	        pY157: __webpack_require__(62),
-	        pY178: __webpack_require__(63),
-	        pYB006: __webpack_require__(64),
-	        pZ531: __webpack_require__(65)
+	        pB002: __webpack_require__(57),
+	        pB039: __webpack_require__(58),
+	        pB039_F: __webpack_require__(59),
+	        pHCKanP: __webpack_require__(60),
+	        pY001: __webpack_require__(61),
+	        pY108: __webpack_require__(62),
+	        pY122: __webpack_require__(63),
+	        pY157: __webpack_require__(64),
+	        pY178: __webpack_require__(65),
+	        pYB006: __webpack_require__(66),
+	        pZ531: __webpack_require__(67)
 	      },
 	      selected: null,
 	      selected_data: null
@@ -12365,84 +12426,84 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "0ce9ac080bf26ea65edc14ce7b4dd6b2.gb";
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "3014edad12dbf3ba6ab13f4893c6e4c6.gb";
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c4092eb04914671644fc3abab497433f.gb";
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "51dacc12408dc716c2b567cbd40a71cc.gb";
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "d590a2cf118c696306dfc3be974c795f.gb";
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "cb96840006aa11b59f44bdf9859818f6.gb";
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "6c5128ea7684e1a95e3f91999d70355a.gb";
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "9a32e18780b30bf8f25b7ea98ec6a17b.gb";
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c0734eb5a4bce971fc9f5ec82a9017df.gb";
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "4d48719f6bd9c3e7d330cf6725459345.gb";
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "74323c1c1da667f3058da0301d6407a3.gb";
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Plasmid</h1><h2>使用方式</h2><h3>解析</h3><pre>{{ pre.parser }}</pre><h3>渲染</h3><pre>{{ pre.render }}</pre><h2>使用案例</h2><div class=\"am-g am-margin-top\"><div class=\"am-u-md-6\"><h3>选择文件</h3><select v-model=\"selected\"><option v-for=\"(k, v) in gbff\" :value=\"v\">{{ k }}</option></select><template v-if=\"selected\"><h3>解析结果</h3><pre class=\"am-pre-scrollable\">{{ parsed | json }}</pre></template></div><div v-if=\"selected\" class=\"am-u-md-6\"><h3>渲染结果</h3><span id=\"plasmid\"></span></div></div><h2>更多用例</h2><h3>#1 Features on the complement sequence</h3><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pB039\" class=\"plasmid\"></span><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pB039_F\" class=\"plasmid\"></span><h3>#2 Flexible view size</h3><span data-outerSize=\"200\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><span data-outerSize=\"300\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><h3>#3 Compatibility</h3><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pHCKanP\" class=\"plasmid\"></span>";
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(68)
-	__vue_template__ = __webpack_require__(72)
+	__vue_script__ = __webpack_require__(70)
+	__vue_template__ = __webpack_require__(74)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12459,7 +12520,7 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12475,9 +12536,9 @@ webpackJsonp([1],[
 	    return {
 	      byurl: '<ul id="status-progressbar"></ul>\n\n<script>\n$(\'ul#status-progressbar\').StatusProgressbar({ dataUrl: JSON_URL });\n</script>',
 	      byjson: '<ul id="status-progressbar"></ul>\n\n<script>\n$(\'ul#status-progressbar\').StatusProgressbar({ dataJson: JSON_STR });\n</script>',
-	      underway: __webpack_require__(69),
-	      failed: __webpack_require__(70),
-	      success: __webpack_require__(71)
+	      underway: __webpack_require__(71),
+	      failed: __webpack_require__(72),
+	      success: __webpack_require__(73)
 	    };
 	  },
 	  attached: function attached() {
@@ -12494,7 +12555,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12521,7 +12582,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12544,7 +12605,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12571,19 +12632,19 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Status Progressbar</h1><h2>使用方式</h2><h3>加载远端 JSON</h3><pre>{{ byurl }}</pre><h3>加载给定 JSON</h3><pre>{{ byjson }}</pre><h2>更多用例</h2><h3>Underway</h3><div class=\"am-g\"><div class=\"am-u-md-9 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-underway\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ underway | json }}</pre></div></div><h3>Failed</h3><div class=\"am-g\"><div class=\"am-u-md-6 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-failed\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ failed | json }}</pre></div></div><h3>Success</h3><div class=\"am-g\"><div class=\"am-u-md-9 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-success\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ success | json }}</pre></div></div>";
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(74)
-	__vue_script__ = __webpack_require__(76)
-	__vue_template__ = __webpack_require__(81)
+	__webpack_require__(76)
+	__vue_script__ = __webpack_require__(78)
+	__vue_template__ = __webpack_require__(83)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12600,13 +12661,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(75);
+	var content = __webpack_require__(77);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -12626,7 +12687,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -12640,26 +12701,26 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(77);
+	__webpack_require__(79);
 
 	module.exports = {
 	  attached: function attached() {
 	    $('#single-sunburst').Sunburst({
-	      dataUrl: __webpack_require__(80)
+	      dataUrl: __webpack_require__(82)
 	    });
 	  }
 	};
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(78);
+	__webpack_require__(80);
 
 	var d3 = __webpack_require__(2);
 
@@ -12785,32 +12846,32 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 79 */,
-/* 80 */
+/* 81 */,
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "8ed59881262cb77a6d57581fe45e4cfe.json";
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Sunburst</h1><h2>使用案例</h2><div class=\"am-text-center\"><div id=\"single-sunburst\"></div></div>";
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(83)
-	__vue_script__ = __webpack_require__(85)
-	__vue_template__ = __webpack_require__(87)
+	__webpack_require__(85)
+	__vue_script__ = __webpack_require__(87)
+	__vue_template__ = __webpack_require__(89)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12827,13 +12888,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(84);
+	var content = __webpack_require__(86);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -12853,7 +12914,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -12867,7 +12928,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12878,18 +12939,18 @@ webpackJsonp([1],[
 	exports.default = {
 	  data: function data() {
 	    return {
-	      package: __webpack_require__(86)
+	      package: __webpack_require__(88)
 	    };
 	  }
 	};
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports) {
 
 	module.exports = {
 		"name": "syngentech-bragi",
-		"version": "0.2.0",
+		"version": "0.2.1",
 		"description": "合生基因前端框架",
 		"scripts": {
 			"bundle": "webpack",
@@ -12942,7 +13003,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-container am-padding\"><div id=\"header\" class=\"am-margin-top-lg am-text-center\">Bragi</div><div class=\"am-text-right\">v{{ package.version }}</div><hr/><ul class=\"am-avg-sm-2 am-avg-md-3\"><li><a v-link=\"{ path: '/amazeui' }\">amazeui</a></li><li><a v-link=\"{ path: '/plasmid' }\">plasmid</a></li><li><a v-link=\"{ path: '/status-progressbar' }\">status-progressbar</a></li><li><a v-link=\"{ path: '/sunburst' }\">sunburst</a></li></ul><hr/><router-view></router-view></div>";

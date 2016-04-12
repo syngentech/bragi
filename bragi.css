@@ -6850,6 +6850,31 @@ img.am-thumbnail a > img {
 .am-alert-danger {
   border-left-color: #dd514c; }
 
+.am-footer {
+  background-color: #fff;
+  padding: 1em 0;
+  text-align: center;
+  font-size: 1.6rem; }
+  .am-footer a {
+    color: #555555; }
+  .am-footer .am-footer-text {
+    margin-top: 10px;
+    font-size: 14px; }
+  .am-footer .am-footer-text-left {
+    text-align: left;
+    padding-left: 10px; }
+  .am-footer .am-footer-divider {
+    color: #ccc; }
+  .am-footer .am-footer-miscs {
+    color: #999999;
+    font-size: 13px; }
+    .am-footer .am-footer-miscs p {
+      margin: 5px 0; }
+  @media only screen and (min-width: 641px) {
+    .am-footer .am-footer-miscs p {
+      display: inline-block;
+      margin: 5px; } }
+
 .am-dropdown {
   position: relative;
   display: inline-block; }
