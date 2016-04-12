@@ -1,8 +1,14 @@
 <template lang="jade">
 h1 Amaze UI
 
+h2#am-icon 图标
+p 使用自托管资源
+section
+  i.am-icon-github.am-margin-right-sm
+  span GitHub
+
 h2#utility 辅助类
-h3 .am-text-4xl
+h3#am-text-4xl .am-text-4xl
 section {{{ am_text_4xl }}}
   pre {{ am_text_4xl }}
 

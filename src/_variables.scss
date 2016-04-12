@@ -3,5 +3,8 @@ $radius-normal: 5px;
 
 @import "../vendor/amazeui/scss/variables.scss";
 
+// Self-host fonts
+$fa-font-path:  '//assets.syngentech.com.cn/fonts/font-awesome/4.3.0' !default;
+
 // Larger font size
 $font-size-4xl: $global-font-size * 3 + 0.8 !default; // 56px
