@@ -5,9 +5,11 @@
 if(window) {
   window.$ = window.jQuery = require('jquery');
   window.d3 = require('d3');
+
+  window.$.AMUI = require('./amazeui');
+  window.$.AMUI.VERSION = require('json!../vendor/amazeui/package.json').version
 }
 
-require('./amazeui');
 require('./plasmid');
 require('./status-progressbar');
 // require('./sunburst');

@@ -1,6 +1,7 @@
 require('./style.scss');
 
-require('../../vendor/amazeui/js/core.js');
+module.exports = require('../../vendor/amazeui/js/core.js');
+
 require('../../vendor/amazeui/js/ui.add2home.js');
 require('../../vendor/amazeui/js/ui.alert.js');
 require('../../vendor/amazeui/js/ui.button.js');
