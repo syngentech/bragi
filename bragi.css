@@ -3529,8 +3529,8 @@ a.am-close:hover {
 ============================================================================= */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
-  src: url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("//dn-staticfile.qbox.me/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  src: url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.eot?v=4.3.0");
+  src: url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("//assets.syngentech.com.cn/fonts/font-awesome/4.3.0/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 

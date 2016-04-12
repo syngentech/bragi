@@ -12273,7 +12273,7 @@ webpackJsonp([1],[
 /* 52 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1>Amaze UI</h1><h2 id=\"utility\">辅助类</h2><h3>.am-text-4xl</h3><section>{{{ am_text_4xl }}}<pre>{{ am_text_4xl }}</pre></section><h2 id=\"am-alert\">警告框</h2><section>{{{ am_alert }}}<pre>{{ am_alert }}</pre></section>";
+	module.exports = "<h1>Amaze UI</h1><h2 id=\"am-icon\">图标</h2><p>使用自托管资源</p><section><i class=\"am-icon-github am-margin-right-sm\"></i><span>GitHub</span></section><h2 id=\"utility\">辅助类</h2><h3 id=\"am-text-4xl\">.am-text-4xl</h3><section>{{{ am_text_4xl }}}<pre>{{ am_text_4xl }}</pre></section><h2 id=\"am-alert\">警告框</h2><section>{{{ am_alert }}}<pre>{{ am_alert }}</pre></section>";
 
 /***/ },
 /* 53 */
@@ -12889,7 +12889,7 @@ webpackJsonp([1],[
 
 	module.exports = {
 		"name": "syngentech-bragi",
-		"version": "0.1.0",
+		"version": "0.2.0",
 		"description": "合生基因前端框架",
 		"scripts": {
 			"bundle": "webpack",
