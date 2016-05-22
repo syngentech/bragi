@@ -5395,7 +5395,7 @@ a.am-close:hover {
   font-size: 1.8rem !important; }
 
 .am-input-group-lg > .am-input-group-label {
-  line-height: 41.6 px-"2"; }
+  line-height: 41.6 px-2; }
 
 .am-input-group-sm > .am-form-field,
 .am-input-group-sm > .am-input-group-label,
@@ -5404,7 +5404,7 @@ a.am-close:hover {
   font-size: 1.4rem !important; }
 
 .am-input-group-sm > .am-input-group-label {
-  line-height: 32.8 px-"2"; }
+  line-height: 32.8 px-2; }
 
 .am-input-group-primary .am-input-group-label {
   background: #0e90d2;

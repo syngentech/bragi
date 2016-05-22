@@ -1,7 +1,7 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 	var parentJsonpFunction = window["webpackJsonpForBragi"];
+/******/ 	window["webpackJsonpForBragi"] = function webpackJsonpCallback(chunkIds, moreModules) {
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, callbacks = [];
@@ -105,11 +105,13 @@
 	if(window) {
 	  window.$ = window.jQuery = __webpack_require__(1);
 	  window.d3 = __webpack_require__(2);
+
+	  window.$.AMUI = __webpack_require__(3);
+	  window.$.AMUI.VERSION = __webpack_require__(42).version
 	}
 
-	__webpack_require__(3);
-	__webpack_require__(42);
-	__webpack_require__(45);
+	__webpack_require__(43);
+	__webpack_require__(46);
 	// require('./sunburst');
 
 
@@ -19525,7 +19527,8 @@
 
 	__webpack_require__(4);
 
-	__webpack_require__(8);
+	module.exports = __webpack_require__(8);
+
 	__webpack_require__(9);
 	__webpack_require__(10);
 	__webpack_require__(11);
@@ -35803,9 +35806,101 @@
 
 /***/ },
 /* 42 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"name": "amazeui-sass",
+		"title": "Amaze UI",
+		"description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+		"version": "2.4.1",
+		"keywords": [
+			"AMUI",
+			"Amaze UI",
+			"AllMobile",
+			"css",
+			"js",
+			"less",
+			"mobile-first",
+			"responsive",
+			"front-end",
+			"framework",
+			"web",
+			"web-components"
+		],
+		"homepage": "http://amazeui.org",
+		"author": "Allmobilize, Inc.",
+		"scripts": {
+			"start": "nodemon tools/app/app.js",
+			"build": "gulp install && gulp",
+			"preview": "gulp preview"
+		},
+		"style": "dist/css/amazeui.css",
+		"less": "less/amazeui.less",
+		"main": "./dist/js/amazeui",
+		"repository": {
+			"type": "git",
+			"url": "https://github.com/amazeui/amazeui-sass.git"
+		},
+		"bugs": {
+			"url": "https://github.com/allmobilize/amazeui/issues"
+		},
+		"dependencies": {
+			"jquery": "latest"
+		},
+		"devDependencies": {
+			"bistre": "^1.0.1",
+			"body-parser": "~1.0.0",
+			"browserify": "^10.2.4",
+			"browserify-derequire": "^0.9.4",
+			"browserify-shim": "^3.8.6",
+			"bundle-collapser": "^1.2.0",
+			"cookie-parser": "~1.0.1",
+			"debug": "^2.2.0",
+			"del": "^1.2.0",
+			"derequire": "^2.0.0",
+			"errorhandler": "^1.3.6",
+			"express": "4.x",
+			"fs-extra": "^0.18.3",
+			"gulp": "^3.8.11",
+			"gulp-autoprefixer": "^2.3.0",
+			"gulp-concat": "latest",
+			"gulp-header": "^1.2.2",
+			"gulp-less": "^3.0.3",
+			"gulp-load-plugins": "^0.10.0",
+			"gulp-minify-css": "^1.1.1",
+			"gulp-nodemon": "^2.0.3",
+			"gulp-rename": "^1.2.2",
+			"gulp-replace": "^0.5.3",
+			"gulp-size": "^1.2.1",
+			"gulp-uglify": "latest",
+			"gulp-util": "^3.0.4",
+			"gulp-zip": "^3.0.2",
+			"handlebars": "^3.0.3",
+			"hbs": "^3.0.1",
+			"less-middleware": "^2.0.1",
+			"lodash": "^3.9.3",
+			"morgan": "~1.0.0",
+			"run-sequence": "^1.1.0",
+			"vinyl-buffer": "^1.0.0",
+			"vinyl-source-stream": "^1.1.0",
+			"watchify": "^3.2.1"
+		},
+		"browserify": {
+			"transform": [
+				"browserify-shim"
+			]
+		},
+		"browserify-shim": {
+			"jquery": "global:jQuery"
+		},
+		"license": "MIT"
+	};
+
+/***/ },
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(43);
+	__webpack_require__(44);
 
 	var d3 = __webpack_require__(2);
 
@@ -36165,17 +36260,17 @@
 
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 44 */,
-/* 45 */
+/* 45 */,
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(46);
+	__webpack_require__(47);
 
 	(function($) {
 	  // Extend jQuery object
@@ -36224,7 +36319,7 @@
 
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
