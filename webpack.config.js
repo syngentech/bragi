@@ -10,7 +10,8 @@ module.exports = {
   output: {
     path: './bundle',
     publicPath: '',
-    filename: './[name].js'
+    filename: './[name].js',
+    jsonpFunction: 'webpackJsonpForBragi'
   },
   module: {
     loaders: [
