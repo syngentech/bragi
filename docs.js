@@ -1,12 +1,12 @@
-webpackJsonp([1],[
+webpackJsonpForBragi([1],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
 	 Bragi Docs
 	 */
-	var Vue = __webpack_require__(48);
-	var Router = __webpack_require__(49);
+	var Vue = __webpack_require__(49);
+	var Router = __webpack_require__(50);
 
 	// Install router
 	Vue.use(Router);
@@ -16,16 +16,16 @@ webpackJsonp([1],[
 
 	router.map({
 	  '/amazeui': {
-	    component: __webpack_require__(50)
+	    component: __webpack_require__(51)
 	  },
 	  '/plasmid': {
-	    component: __webpack_require__(55)
+	    component: __webpack_require__(56)
 	  },
 	  '/status-progressbar': {
-	    component: __webpack_require__(69)
+	    component: __webpack_require__(70)
 	  },
 	  '/sunburst': {
-	    component: __webpack_require__(75)
+	    component: __webpack_require__(76)
 	  }
 	});
 
@@ -33,7 +33,7 @@ webpackJsonp([1],[
 	  '*': '/amazeui'
 	});
 
-	router.start(__webpack_require__(84), '#app');
+	router.start(__webpack_require__(85), '#app');
 
 
 /***/ },
@@ -84,7 +84,8 @@ webpackJsonp([1],[
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */
+/* 48 */,
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/*!
@@ -9614,7 +9615,7 @@ webpackJsonp([1],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -12220,13 +12221,13 @@ webpackJsonp([1],[
 	}));
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(51)
-	__vue_script__ = __webpack_require__(53)
-	__vue_template__ = __webpack_require__(54)
+	__webpack_require__(52)
+	__vue_script__ = __webpack_require__(54)
+	__vue_template__ = __webpack_require__(55)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12243,13 +12244,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(52);
+	var content = __webpack_require__(53);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -12269,7 +12270,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -12283,7 +12284,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12331,18 +12332,18 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Amaze UI</h1><h2 id=\"am-alert\">Alert</h2><section>{{{ am_alert }}}<pre>{{ am_alert }}</pre></section><h2 id=\"am-footer\">Footer</h2><section>{{{ am_footer }}}<pre>{{ am_footer }}</pre></section><h2 id=\"am-icon\">Icon</h2><p>使用自托管资源，当前 CDN 状态：<i :class=\"am_icon.class\" class=\"am-margin-right-xs\"></i><span>{{ am_icon.text }}</span></p><h2 id=\"utility\">Utility</h2><h3 id=\"am-text-4xl\">.am-text-4xl</h3><section>{{{ am_text_4xl }}}<pre>{{ am_text_4xl }}</pre></section>";
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(56)
-	__vue_template__ = __webpack_require__(68)
+	__vue_script__ = __webpack_require__(57)
+	__vue_template__ = __webpack_require__(69)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12359,7 +12360,7 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12368,7 +12369,7 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	__webpack_require__(42);
+	__webpack_require__(43);
 
 	exports.default = {
 	  data: function data() {
@@ -12378,17 +12379,17 @@ webpackJsonp([1],[
 	        render: '$(\'#plasmid\').Plasmid({ gbffUrl: GBFF_URL })'
 	      },
 	      gbff: {
-	        pB002: __webpack_require__(57),
-	        pB039: __webpack_require__(58),
-	        pB039_F: __webpack_require__(59),
-	        pHCKanP: __webpack_require__(60),
-	        pY001: __webpack_require__(61),
-	        pY108: __webpack_require__(62),
-	        pY122: __webpack_require__(63),
-	        pY157: __webpack_require__(64),
-	        pY178: __webpack_require__(65),
-	        pYB006: __webpack_require__(66),
-	        pZ531: __webpack_require__(67)
+	        pB002: __webpack_require__(58),
+	        pB039: __webpack_require__(59),
+	        pB039_F: __webpack_require__(60),
+	        pHCKanP: __webpack_require__(61),
+	        pY001: __webpack_require__(62),
+	        pY108: __webpack_require__(63),
+	        pY122: __webpack_require__(64),
+	        pY157: __webpack_require__(65),
+	        pY178: __webpack_require__(66),
+	        pYB006: __webpack_require__(67),
+	        pZ531: __webpack_require__(68)
 	      },
 	      selected: null,
 	      selected_data: null
@@ -12426,84 +12427,84 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "0ce9ac080bf26ea65edc14ce7b4dd6b2.gb";
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "3014edad12dbf3ba6ab13f4893c6e4c6.gb";
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c4092eb04914671644fc3abab497433f.gb";
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "51dacc12408dc716c2b567cbd40a71cc.gb";
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "d590a2cf118c696306dfc3be974c795f.gb";
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "cb96840006aa11b59f44bdf9859818f6.gb";
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "6c5128ea7684e1a95e3f91999d70355a.gb";
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "9a32e18780b30bf8f25b7ea98ec6a17b.gb";
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c0734eb5a4bce971fc9f5ec82a9017df.gb";
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "4d48719f6bd9c3e7d330cf6725459345.gb";
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "74323c1c1da667f3058da0301d6407a3.gb";
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Plasmid</h1><h2>使用方式</h2><h3>解析</h3><pre>{{ pre.parser }}</pre><h3>渲染</h3><pre>{{ pre.render }}</pre><h2>使用案例</h2><div class=\"am-g am-margin-top\"><div class=\"am-u-md-6\"><h3>选择文件</h3><select v-model=\"selected\"><option v-for=\"(k, v) in gbff\" :value=\"v\">{{ k }}</option></select><template v-if=\"selected\"><h3>解析结果</h3><pre class=\"am-pre-scrollable\">{{ parsed | json }}</pre></template></div><div v-if=\"selected\" class=\"am-u-md-6\"><h3>渲染结果</h3><span id=\"plasmid\"></span></div></div><h2>更多用例</h2><h3>#1 Features on the complement sequence</h3><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pB039\" class=\"plasmid\"></span><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pB039_F\" class=\"plasmid\"></span><h3>#2 Flexible view size</h3><span data-outerSize=\"200\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><span data-outerSize=\"300\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pY108\" class=\"plasmid\"></span><h3>#3 Compatibility</h3><span data-outerSize=\"400\" :data-gbffUrl=\"gbff.pHCKanP\" class=\"plasmid\"></span>";
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(70)
-	__vue_template__ = __webpack_require__(74)
+	__vue_script__ = __webpack_require__(71)
+	__vue_template__ = __webpack_require__(75)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12520,7 +12521,7 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12529,16 +12530,16 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	__webpack_require__(45);
+	__webpack_require__(46);
 
 	exports.default = {
 	  data: function data() {
 	    return {
 	      byurl: '<ul id="status-progressbar"></ul>\n\n<script>\n$(\'ul#status-progressbar\').StatusProgressbar({ dataUrl: JSON_URL });\n</script>',
 	      byjson: '<ul id="status-progressbar"></ul>\n\n<script>\n$(\'ul#status-progressbar\').StatusProgressbar({ dataJson: JSON_STR });\n</script>',
-	      underway: __webpack_require__(71),
-	      failed: __webpack_require__(72),
-	      success: __webpack_require__(73)
+	      underway: __webpack_require__(72),
+	      failed: __webpack_require__(73),
+	      success: __webpack_require__(74)
 	    };
 	  },
 	  attached: function attached() {
@@ -12555,7 +12556,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12582,7 +12583,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12605,7 +12606,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -12632,19 +12633,19 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Status Progressbar</h1><h2>使用方式</h2><h3>加载远端 JSON</h3><pre>{{ byurl }}</pre><h3>加载给定 JSON</h3><pre>{{ byjson }}</pre><h2>更多用例</h2><h3>Underway</h3><div class=\"am-g\"><div class=\"am-u-md-9 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-underway\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ underway | json }}</pre></div></div><h3>Failed</h3><div class=\"am-g\"><div class=\"am-u-md-6 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-failed\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ failed | json }}</pre></div></div><h3>Success</h3><div class=\"am-g\"><div class=\"am-u-md-9 am-u-sm-centered am-margin-vertical\"><ul id=\"status-progressbar-success\"></ul></div><div class=\"am-u-sm-12\"><pre>{{ success | json }}</pre></div></div>";
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(76)
-	__vue_script__ = __webpack_require__(78)
-	__vue_template__ = __webpack_require__(83)
+	__webpack_require__(77)
+	__vue_script__ = __webpack_require__(79)
+	__vue_template__ = __webpack_require__(84)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12661,13 +12662,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(77);
+	var content = __webpack_require__(78);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -12687,7 +12688,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -12701,26 +12702,26 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(79);
+	__webpack_require__(80);
 
 	module.exports = {
 	  attached: function attached() {
 	    $('#single-sunburst').Sunburst({
-	      dataUrl: __webpack_require__(82)
+	      dataUrl: __webpack_require__(83)
 	    });
 	  }
 	};
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(80);
+	__webpack_require__(81);
 
 	var d3 = __webpack_require__(2);
 
@@ -12846,32 +12847,32 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 81 */,
-/* 82 */
+/* 82 */,
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "8ed59881262cb77a6d57581fe45e4cfe.json";
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Sunburst</h1><h2>使用案例</h2><div class=\"am-text-center\"><div id=\"single-sunburst\"></div></div>";
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(85)
-	__vue_script__ = __webpack_require__(87)
-	__vue_template__ = __webpack_require__(89)
+	__webpack_require__(86)
+	__vue_script__ = __webpack_require__(88)
+	__vue_template__ = __webpack_require__(90)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -12888,13 +12889,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(86);
+	var content = __webpack_require__(87);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -12914,7 +12915,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -12928,7 +12929,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12939,18 +12940,18 @@ webpackJsonp([1],[
 	exports.default = {
 	  data: function data() {
 	    return {
-	      package: __webpack_require__(88)
+	      package: __webpack_require__(89)
 	    };
 	  }
 	};
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports) {
 
 	module.exports = {
 		"name": "syngentech-bragi",
-		"version": "0.2.1",
+		"version": "0.2.2",
 		"description": "合生基因前端框架",
 		"scripts": {
 			"bundle": "webpack",
@@ -13003,7 +13004,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-container am-padding\"><div id=\"header\" class=\"am-margin-top-lg am-text-center\">Bragi</div><div class=\"am-text-right\">v{{ package.version }}</div><hr/><ul class=\"am-avg-sm-2 am-avg-md-3\"><li><a v-link=\"{ path: '/amazeui' }\">amazeui</a></li><li><a v-link=\"{ path: '/plasmid' }\">plasmid</a></li><li><a v-link=\"{ path: '/status-progressbar' }\">status-progressbar</a></li><li><a v-link=\"{ path: '/sunburst' }\">sunburst</a></li></ul><hr/><router-view></router-view></div>";
