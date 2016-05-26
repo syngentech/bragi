@@ -1,10 +1,21 @@
+// Custom configuration over defaults
+// =============================================================================
+
 // Larger radius
 $radius-normal: 5px;
 
+// Self-host fonts
+$fa-font-path: '//assets.syngentech.com.cn/fonts/font-awesome/4.6.3';
+
+
+// Other default variables from vendor
+// =============================================================================
+
 @import "../vendor/amazeui/scss/variables.scss";
 
-// Self-host fonts
-$fa-font-path: '//assets.syngentech.com.cn/fonts/font-awesome/4.3.0' !default;
 
-// Larger font size
+// New variables in bragi
+// =============================================================================
+
+// Four times the font size
 $font-size-4xl: $global-font-size * 3 + 0.8 !default; // 56px
