@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       package: require('../package.json')
     }

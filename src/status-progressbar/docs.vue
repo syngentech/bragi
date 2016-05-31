@@ -29,10 +29,10 @@ h3 Success
 </template>
 
 <script>
-require('./');
+require('./')
 
 export default {
-  data: function() {
+  data: function () {
     return {
       byurl:
 `<ul id="status-progressbar"></ul>
@@ -49,18 +49,18 @@ $('ul#status-progressbar').StatusProgressbar({ dataJson: JSON_STR });
       underway: require('./json/underway.json'),
       failed: require('./json/failed.json'),
       success: require('./json/success.json')
-    };
+    }
   },
-  attached: function() {
-    $(document).ready(function() {
-      $('pre').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });
+  attached: function () {
+    window.$(document).ready(function () {
+      window.$('pre').each(function (i, block) {
+        window.hljs.highlightBlock(block)
+      })
+    })
 
-    $('ul#status-progressbar-underway').StatusProgressbar({ dataJson: this.underway });
-    $('ul#status-progressbar-failed').StatusProgressbar({ dataJson: this.failed });
-    $('ul#status-progressbar-success').StatusProgressbar({ dataJson: this.success });
+    window.$('ul#status-progressbar-underway').StatusProgressbar({ dataJson: this.underway })
+    window.$('ul#status-progressbar-failed').StatusProgressbar({ dataJson: this.failed })
+    window.$('ul#status-progressbar-success').StatusProgressbar({ dataJson: this.success })
   }
 }
 </script>

@@ -20,7 +20,7 @@ h2 使用案例
     h3 渲染结果
     span#plasmid
 
-h2 更多用例
+h2 更多用例g
 h3 #1 Features on the complement sequence
 span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pB039")
 span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pB039_F")
@@ -33,14 +33,14 @@ span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pHCKanP")
 </template>
 
 <script>
-require('./');
+require('./')
 
 export default {
-  data: function() {
+  data: function () {
     return {
       pre: {
-        parser: `$.ajax({ url: GBFF_URL }).done(function(data) { console.log($.Plasmid.parse(data)); })`,
-        render: `$('#plasmid').Plasmid({ gbffUrl: GBFF_URL })`
+        parser: 'window.$.ajax({ url: GBFF_URL }).done(function (data) { console.log(window.$.Plasmid.parse(data)) })',
+        render: '{window.$("#plasmid").Plasmid({ gbffUrl: GBFF_URL })'
       },
       gbff: {
         pB002: require('file!./gbff/pB002.gb'),
@@ -57,34 +57,35 @@ export default {
       },
       selected: null,
       selected_data: null
-    };
+    }
   },
   computed: {
-    parsed: function() {
-      return this.selected_data ? $.Plasmid.parse(this.selected_data) : '';
+    parsed: function () {
+      return this.selected_data ? window.$.Plasmid.parse(this.selected_data) : ''
     }
   },
   watch: {
-   selected: function(val) {
-     var self = this;
-     if (val) {
-       $.ajax({ url: val }).done(function(data) { self.selected_data = data; })
-       $('#plasmid').Plasmid({ gbffUrl: val });
-     } else {
-        self.selected_data = null;
-     }
-   },
- },
- attached: function() {
-   $(document).ready(function() {
-     $('pre').each(function(i, block) {
-       hljs.highlightBlock(block);
-     });
-   });
+    selected: function (val) {
+      var self = this
+      if (val) {
+        window.$.ajax({ url: val }).done(function (data) { self.selected_data = data })
+        window.$('#plasmid').Plasmid({ gbffUrl: val })
+      } else {
+        self.selected_data = null
+      }
+    }
+  },
+  attached: function () {
+    let $ = window.$
+    $(document).ready(function () {
+      $('pre').each(function (i, block) {
+        window.hljs.highlightBlock(block)
+      })
+    })
 
-   $('span.plasmid').each(function() {
-     $(this).Plasmid({ outerSize: $(this).attr('data-outerSize'), gbffUrl: $(this).attr('data-gbffUrl') });
-   });
- }
+    $('span.plasmid').each(function () {
+      $(this).Plasmid({ outerSize: $(this).attr('data-outerSize'), gbffUrl: $(this).attr('data-gbffUrl') })
+    })
+  }
 }
 </script>
