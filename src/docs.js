@@ -1,14 +1,14 @@
 /*
  Bragi Docs
  */
-var Vue = require('vue');
-var Router = require('vue-router');
+var Vue = require('vue')
+var Router = require('vue-router')
 
 // Install router
-Vue.use(Router);
+Vue.use(Router)
 
 // Routing
-var router = new Router();
+var router = new Router()
 
 router.map({
   '/amazeui': {
@@ -23,10 +23,10 @@ router.map({
   '/sunburst': {
     component: require('./sunburst/docs.vue')
   }
-});
+})
 
 router.redirect({
   '*': '/amazeui'
-});
+})
 
-router.start(require('./docs.vue'), '#app');
+router.start(require('./docs.vue'), '#app')

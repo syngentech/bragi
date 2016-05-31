@@ -1,46 +1,46 @@
 require('./style.scss');
 
-(function($) {
+(function ($) {
   // Extend jQuery object
-  $.fn.StatusProgressbar = function(opts) {
-    var ul = $(this).addClass('status-progressbar').html('');
+  $.fn.StatusProgressbar = function (opts) {
+    var ul = $(this).addClass('status-progressbar').html('')
 
     if (opts.dataJson) {
-       render(opts.dataJson);
+      render(opts.dataJson)
     } else if (opts.dataUrl) {
-      $.getJSON(opts.dataUrl, function(json) { render(json); });
+      $.getJSON(opts.dataUrl, function (json) { render(json) })
     }
 
-    function render(data) {
+    function render (data) {
       // Insert progresses
       for (var name in data) {
-        var value = data[name];
+        var value = data[name]
         ul.append(
           '<li class="progress' + (value.status === '' ? '' : ' active') + '"><ul>' +
           '<li class="status">' + name + '</li>' +
           '<li class="' + (value.status === 'danger' ? 'cross am-icon am-icon-times' : 'circle') + '"></li>' +
           '<li class="date">' + (value.date === '' ? '&nbsp;<br/>&nbsp;' : value.date.replace(/ /, '<br/>')) + '</li>' +
           '</ul></li>'
-        );
+        )
       }
 
       // Insert bars
       ul.children('li + li').before(
         '<li class="bar"><ul><li class="status">&nbsp;</li><li class="rectangle"></li><li class="date">&nbsp;<br/>&nbsp;</li></ul></li>'
-      );
+      )
 
       // Activate bars
-      ul.children('li.bar').filter(function() {
-        var li = $(this);
+      ul.children('li.bar').filter(function () {
+        var li = $(this)
         if ($(this).prev().hasClass('active') && ($(this).next().hasClass('active'))) {
-          li.addClass('active');
+          li.addClass('active')
         }
-      });
+      })
 
       // Adjust bar width
-      var barWidth = (ul.width() - ul.children('li.progress').length * 120) / ul.children('li.bar').length + 90 - 5;
-      ul.children('li.bar').width(barWidth);
-      ul.find('li.rectangle').width(barWidth);
+      var barWidth = (ul.width() - ul.children('li.progress').length * 120) / ul.children('li.bar').length + 90 - 5
+      ul.children('li.bar').width(barWidth)
+      ul.find('li.rectangle').width(barWidth)
     }
-  };
-})(require('jquery'));
+  }
+})(require('jquery'))

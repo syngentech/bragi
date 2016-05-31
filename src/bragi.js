@@ -2,14 +2,14 @@
   Bragi Bundle
 */
 
-if(window) {
-  window.$ = window.jQuery = require('jquery');
-  window.d3 = require('d3');
+if (window) {
+  window.$ = window.jQuery = require('jquery')
+  window.d3 = require('d3')
 
-  window.$.AMUI = require('./amazeui');
-  window.$.AMUI.VERSION = require('json!../vendor/amazeui/package.json').version
+  window.$.AMUI = require('./amazeui')
+  window.$.AMUI.VERSION = require('../vendor/amazeui/package.json').version
 }
 
-require('./plasmid');
-require('./status-progressbar');
+require('./plasmid')
+require('./status-progressbar')
 // require('./sunburst');

@@ -7,17 +7,17 @@ h2 使用案例
 </template>
 
 <script>
-require('./');
+require('./')
 
 module.exports = {
   attached: function () {
-    $('#single-sunburst').Sunburst({
-      dataUrl: require('file!./json/flare.json')
-    });
+    window.$('#single-sunburst').Sunburst({
+      dataUrl: require('./json/flare.json')
+    })
   }
 }
 </script>
 
 <style lang="scss">
-@import "./style.scss";
+@import "./style.scss"
 </style>

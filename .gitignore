@@ -1,6 +1,7 @@
-# Ignore node modules
+.DS_Store
 node_modules/
-
-# Ignore built bundles
-bundle/*
-!bundle/index.html
+dist/
+npm-debug.log
+selenium-debug.log
+test/unit/coverage
+test/e2e/reports

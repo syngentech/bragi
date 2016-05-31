@@ -18,9 +18,9 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
-      package: require('json!../package.json')
+      package: require('../package.json')
     }
   }
 }
