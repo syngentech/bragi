@@ -46,9 +46,9 @@ $('ul#status-progressbar').StatusProgressbar({ dataUrl: JSON_URL });
 <script>
 $('ul#status-progressbar').StatusProgressbar({ dataJson: JSON_STR });
 <\/script>`,
-      underway: require('json!./json/underway.json'),
-      failed: require('json!./json/failed.json'),
-      success: require('json!./json/success.json')
+      underway: require('./json/underway.json'),
+      failed: require('./json/failed.json'),
+      success: require('./json/success.json')
     };
   },
   attached: function() {

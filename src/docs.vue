@@ -20,7 +20,7 @@
 export default {
   data: function() {
     return {
-      package: require('json!../package.json')
+      package: require('../package.json')
     }
   }
 }

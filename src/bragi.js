@@ -7,7 +7,7 @@ if(window) {
   window.d3 = require('d3');
 
   window.$.AMUI = require('./amazeui');
-  window.$.AMUI.VERSION = require('json!../vendor/amazeui/package.json').version
+  window.$.AMUI.VERSION = require('../vendor/amazeui/package.json').version
 }
 
 require('./plasmid');

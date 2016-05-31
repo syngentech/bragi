@@ -12,7 +12,7 @@ require('./');
 module.exports = {
   attached: function () {
     $('#single-sunburst').Sunburst({
-      dataUrl: require('file!./json/flare.json')
+      dataUrl: require('./json/flare.json')
     });
   }
 }

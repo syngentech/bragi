@@ -36,7 +36,7 @@ var d3 = require('d3');
           while (/^\s/.test(line)) {
             lineno++;
             match = /^\s+(\S+)\s+(\S+)/.exec(line);
-            feature = { key: match[1], location: match[2], qualifier: {} };
+           var feature = { key: match[1], location: match[2], qualifier: {} };
             line = lines[lineno + 1];
             while(/^\s+\//.test(line)) {
               lineno++;
