@@ -8,12 +8,12 @@ require('./style.scss');
     if (opts.dataJson) {
       render(opts.dataJson)
     } else if (opts.dataUrl) {
-      $.getJSON(opts.dataUrl, function (json) { render(json) })
+      $.getJSON(opts.dataUrl, (json) => render(json))
     }
 
     function render (data) {
       // Insert progresses
-      for (var name in data) {
+      for (let name in data) {
         var value = data[name]
         ul.append(
           '<li class="progress' + (value.status === '' ? '' : ' active') + '"><ul>' +

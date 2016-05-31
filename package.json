@@ -10,19 +10,10 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/syngentech/bragi.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/syngentech/bragi/issues"
-  },
-  "homepage": "http://syngentech.github.io/bragi/",
   "dependencies": {
     "babel-runtime": "^6.0.0",
-    "vue": "^1.0.21"
+    "vue": "^1.0.21",
+    "vue-router": "^0.7.9"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -80,11 +71,15 @@
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.3.0",
-    "vue-router": "^0.7.9",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
     "webpack-merge": "^0.8.3"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syngentech/bragi.git"
   }
 }

@@ -20,7 +20,7 @@ h2 使用案例
     h3 渲染结果
     span#plasmid
 
-h2 更多用例g
+h2 更多用例
 h3 #1 Features on the complement sequence
 span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pB039")
 span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pB039_F")
@@ -39,8 +39,8 @@ export default {
   data: function () {
     return {
       pre: {
-        parser: 'window.$.ajax({ url: GBFF_URL }).done(function (data) { console.log(window.$.Plasmid.parse(data)) })',
-        render: '{window.$("#plasmid").Plasmid({ gbffUrl: GBFF_URL })'
+        parser: '$.ajax({ url: GBFF_URL }).done(function (data) { console.log($.Plasmid.parse(data)) })',
+        render: '$("#plasmid").Plasmid({ gbffUrl: GBFF_URL })'
       },
       gbff: {
         pB002: require('file!./gbff/pB002.gb'),
@@ -66,17 +66,17 @@ export default {
   },
   watch: {
     selected: function (val) {
-      var self = this
       if (val) {
-        window.$.ajax({ url: val }).done(function (data) { self.selected_data = data })
+        window.$.ajax({ url: val }).done((data) => (this.selected_data = data))
         window.$('#plasmid').Plasmid({ gbffUrl: val })
       } else {
-        self.selected_data = null
+        this.selected_data = null
       }
     }
   },
   attached: function () {
     let $ = window.$
+
     $(document).ready(function () {
       $('pre').each(function (i, block) {
         window.hljs.highlightBlock(block)
