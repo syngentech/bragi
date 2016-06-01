@@ -7,12 +7,12 @@ h2 使用案例
 </template>
 
 <script>
-require('./')
+import $ from './'
 
 module.exports = {
   attached: function () {
-    window.$('#single-sunburst').Sunburst({
-      dataUrl: require('file!./json/flare.json')
+    $('#single-sunburst').Sunburst({
+      dataJson: require('./json/flare.json')
     })
   }
 }

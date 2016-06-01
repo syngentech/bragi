@@ -1,15 +1,14 @@
-/*
-  Bragi Bundle
-*/
+import $ from 'jquery'
+import d3 from 'd3'
 
 if (window) {
-  window.$ = window.jQuery = require('jquery')
-  window.d3 = require('d3')
+  window.$ = $
+  window.d3 = d3
 
   window.$.AMUI = require('./amazeui')
   window.$.AMUI.VERSION = require('../vendor/amazeui/package.json').version
 }
 
-require('./plasmid')
-require('./status-progressbar')
-// require('./sunburst');
+import './plasmid'
+import './status-progressbar'
+// import './sunburst'

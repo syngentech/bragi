@@ -21,7 +21,7 @@ section {{{ am_text_4xl }}}
 </template>
 
 <script>
-require('./')
+import './'
 
 export default {
   data: function () {

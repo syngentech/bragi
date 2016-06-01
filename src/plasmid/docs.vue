@@ -33,7 +33,7 @@ span.plasmid(data-outerSize="400", :data-gbffUrl="gbff.pHCKanP")
 </template>
 
 <script>
-require('./')
+import $ from './'
 
 export default {
   data: function () {
@@ -61,22 +61,20 @@ export default {
   },
   computed: {
     parsed: function () {
-      return this.selected_data ? window.$.Plasmid.parse(this.selected_data) : ''
+      return this.selected_data ? $.Plasmid.parse(this.selected_data) : ''
     }
   },
   watch: {
     selected: function (val) {
       if (val) {
-        window.$.ajax({ url: val }).done((data) => (this.selected_data = data))
-        window.$('#plasmid').Plasmid({ gbffUrl: val })
+        $.ajax({ url: val }).done((data) => (this.selected_data = data))
+        $('#plasmid').Plasmid({ gbffUrl: val })
       } else {
         this.selected_data = null
       }
     }
   },
   attached: function () {
-    let $ = window.$
-
     $(document).ready(function () {
       $('pre').each(function (i, block) {
         window.hljs.highlightBlock(block)

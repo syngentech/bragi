@@ -29,7 +29,7 @@ h3 Success
 </template>
 
 <script>
-require('./')
+import $ from './'
 
 export default {
   data: function () {
@@ -52,15 +52,15 @@ $('ul#status-progressbar').StatusProgressbar({ dataJson: JSON_STR });
     }
   },
   attached: function () {
-    window.$(document).ready(function () {
-      window.$('pre').each(function (i, block) {
+    $(document).ready(function () {
+      $('pre').each(function (i, block) {
         window.hljs.highlightBlock(block)
       })
     })
 
-    window.$('ul#status-progressbar-underway').StatusProgressbar({ dataJson: this.underway })
-    window.$('ul#status-progressbar-failed').StatusProgressbar({ dataJson: this.failed })
-    window.$('ul#status-progressbar-success').StatusProgressbar({ dataJson: this.success })
+    $('ul#status-progressbar-underway').StatusProgressbar({ dataJson: this.underway })
+    $('ul#status-progressbar-failed').StatusProgressbar({ dataJson: this.failed })
+    $('ul#status-progressbar-success').StatusProgressbar({ dataJson: this.success })
   }
 }
 </script>
