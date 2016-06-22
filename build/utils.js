@@ -54,3 +54,15 @@ exports.styleLoaders = function (options) {
   }
   return output
 }
+
+exports.styleLoadersWithAutoprefixer = function (options) {
+  var output = []
+  var loaders = exports.cssLoaders(options)
+  for (var extension in loaders) {
+    output.push({
+      test: new RegExp('\\.' + extension + '$'),
+      loader: loaders[extension].replace('!css-loader?sourceMap', '!css-loader?sourceMap!autoprefixer-loader')
+    })
+  }
+  return output
+}
