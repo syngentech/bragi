@@ -18,6 +18,16 @@ h2#utility Utility
 h3#am-text-4xl .am-text-4xl
 section {{{ am_text_4xl }}}
   pre {{ am_text_4xl }}
+
+h2#test Tests
+button.am-btn.am-btn-primary(type="button", data-am-modal="{target: '#test-alert'}") Alert
+
+#test-alert.am-modal.am-modal-alert(tabindex="-1")
+  .am-modal-dialog
+    .am-modal-hd Amaze UI
+    .am-modal-bd Hello world！
+    .am-modal-footer
+      span.am-modal-btn 确定
 </template>
 
 <script>
